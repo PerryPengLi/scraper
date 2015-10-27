@@ -108,4 +108,5 @@ def scrape_cboe_daily_volume(start_date, end_date, output_file):
         driver.quit()
 
 
-scrape_cboe_daily_volume('10/2/2015', '10/8/2015', 'cboe_volume.csv')
+scrape_cboe_daily_volume('7/1/2015', '9/30/2015', 'cboe_volume_2015q3.csv')
+scrape_cboe_daily_volume('1/1/2015', '3/31/2015', 'cboe_volume_2015q1.csv')
