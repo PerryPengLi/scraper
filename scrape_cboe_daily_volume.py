@@ -50,9 +50,9 @@ def parse_one_day(a_date, a_file, soup):
     a_file.write(data_str)
 
 
-def scrape_one_day(date, a_driver, output_file):
+def scrape_one_day(date, driver, output_file):
     #find the element CBOE market date input box.
-    input_element = a_driver.find_element_by_id("AllContent_ContentMain_ucMktStatCtl_txtDate")
+    input_element = driver.find_element_by_id("AllContent_ContentMain_ucMktStatCtl_txtDate")
 
     # type in the search
     input_element.clear()
@@ -62,9 +62,9 @@ def scrape_one_day(date, a_driver, output_file):
     input_element.submit()
 
     # we have to wait for the page to refresh, the last thing that seems to be updated is the title
-    WebDriverWait(a_driver, 10).until(EC.title_contains("Daily Market Statistics"))
+    WebDriverWait(driver, 10).until(EC.title_contains("Daily Market Statistics"))
 
-    html = a_driver.page_source
+    html = driver.page_source
     soup = BeautifulSoup(html)
 
     parse_one_day(date, output_file, soup)
@@ -108,6 +108,4 @@ def scrape_cboe_daily_volume(start_date, end_date, output_file):
         driver.quit()
 
 
-scrape_cboe_daily_volume('7/1/2014', '9/30/2014', 'cboe_volume_2014q3.csv')
-scrape_cboe_daily_volume('4/1/2014', '6/30/2014', 'cboe_volume_2014q2.csv')
-scrape_cboe_daily_volume('1/1/2014', '3/31/2014', 'cboe_volume_2014q1.csv')
+scrape_cboe_daily_volume('10/1/2014', '12/31/2014', 'data\cboe_volume_2014q4.csv')
