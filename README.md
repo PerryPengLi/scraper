@@ -11,8 +11,8 @@ In order to extract web data with Python, 2 steps need to be performed:
 In this program, A Python library named Selenium is used to do step 1, and BeautifulSoup Library is used to do step 2.
 
 More documentation can be found at these 2 sites:
+
     http://docs.seleniumhq.org/
-    
     http://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
 Here is a brief discussion how the job is done.
@@ -42,8 +42,9 @@ Here is a brief discussion how the job is done.
     Once the page is opened, use view page source in Firefox to find out that the date input box has Id 
     "AllContent_ContentMain_ucMktStatCtl_txtDate"
 
-    The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, the
-    page will refresh with data for that date.  This is how Selenium control the browser to automate the boring hand input.
+    The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, 
+    the page will refresh with data for that date.  This is how Selenium control the browser to automate the boring 
+    hand input.
 
     input_element = driver.find_element_by_id("AllContent_ContentMain_ucMktStatCtl_txtDate")
     input_element.clear()
