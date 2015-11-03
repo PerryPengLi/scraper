@@ -35,13 +35,13 @@ Here is a brief discussion how the job is done.
     like Google Chrome.  But in this program, only Firefox control code is implemented.
 
 (3) Selenium is so easy to use that you only need the following 2 lines to start a Firefox browser and go to the CBOE page.
+
       driver = webdriver.Firefox()
       driver.get("http://www.cboe.com/data/mktstat.aspx")
 
     Once the page is opened, use view page source in Firefox to find out that the date input box has Id "AllContent_ContentMain_ucMktStatCtl_txtDate"
 
-    The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, the page will
-    refresh with data for that date.  This is how Selenium control the browser to automate the boring hand input.
+The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, the page will refresh with data for that date.  This is how Selenium control the browser to automate the boring hand input.
 
     input_element = driver.find_element_by_id("AllContent_ContentMain_ucMktStatCtl_txtDate")
     input_element.clear()
