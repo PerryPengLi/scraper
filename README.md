@@ -12,6 +12,7 @@ In this program, A Python library named Selenium is used to do step 1, and Beaut
 
 More documentation can be found at these 2 sites:
     http://docs.seleniumhq.org/
+    
     http://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
 Here is a brief discussion how the job is done.
@@ -23,25 +24,26 @@ Here is a brief discussion how the job is done.
     let you Select any date in the past to get that date's historical data, you must enter the date in the the format of
     mm/dd/yyyy.
 
-    Apparently, if I want to get Q3 2015 trading data, from 07/01/2015 to 09/30/2015, entering the date one by one manually
-    is a tedious job.  That's why I wanted to write this Python program to do the job automatically.
+    Apparently, if I want to get Q3 2015 trading data, from 07/01/2015 to 09/30/2015, entering the date one by one 
+    manually is a tedious job.  That's why I wanted to write this Python program to do the job automatically.
 
 (2) Pre-requirements to run the program:
     Python 2.7.3
     Selenium: Use command "pip install selenium" to install.
     BeautifulSoup: Use command "pip install beautifulsoup4" to install.
 
-    I am also assuming that you have Firefox installed on the computer, Selenium can also control other popular browsers,
-    like Google Chrome.  But in this program, only Firefox control code is implemented.
+    I am also assuming that you have Firefox installed on the computer, Selenium can also control other popular
+    browsers, like Google Chrome.  But in this program, only Firefox control code is implemented.
 
 (3) Selenium is so easy to use that you only need the following 2 lines to start a Firefox browser and go to the CBOE page.
       driver = webdriver.Firefox()
       driver.get("http://www.cboe.com/data/mktstat.aspx")
 
-    Once the page is opened, use view page source in Firefox to find out that the date input box has Id "AllContent_ContentMain_ucMktStatCtl_txtDate"
+    Once the page is opened, use view page source in Firefox to find out that the date input box has Id 
+    "AllContent_ContentMain_ucMktStatCtl_txtDate"
 
-    The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, the page will
-    refresh with data for that date.  This is how Selenium control the browser to automate the boring hand input.
+    The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, the
+    page will refresh with data for that date.  This is how Selenium control the browser to automate the boring hand input.
 
     input_element = driver.find_element_by_id("AllContent_ContentMain_ucMktStatCtl_txtDate")
     input_element.clear()
