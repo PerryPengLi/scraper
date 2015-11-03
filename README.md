@@ -54,6 +54,7 @@ The following 4 line of code let you find the input field, clear it, and set a d
     input_element.submit()
 
 (4) Now that you have the html page in the driver, you just need to pass it to BeautifulSoup parser.
+
     html = driver.page_source
     soup = BeautifulSoup(html)
 
