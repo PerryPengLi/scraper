@@ -5,6 +5,8 @@ This program let you define a range of start and end date, use selenium to send 
 trading volume data, and then use BeautifulSoup to parse the data and write to a csv file.
 
 In order to extract web data with Python, 2 steps need to be performed:
+
+
     Step 1: Get the html page that contains the data.
     Step 2: Parse the html page and extract the data you are interested in.
 
@@ -13,7 +15,6 @@ In this program, A Python library named Selenium is used to do step 1, and Beaut
 More documentation can be found at these 2 sites:
     http://docs.seleniumhq.org/
     http://www.crummy.com/software/BeautifulSoup/bs4/doc/
-
 
 Here is a brief discussion how the job is done.
 
@@ -44,7 +45,6 @@ Once the page is opened, use view page source in Firefox to find out that the da
 The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, 
 the page will refresh with data for that date.  This is how Selenium control the browser to automate the boring 
 hand input.
-
     input_element = driver.find_element_by_id("AllContent_ContentMain_ucMktStatCtl_txtDate")
     input_element.clear()
     input_element.send_keys(date)
