@@ -18,14 +18,14 @@ More documentation can be found at these 2 sites:
 Here is a brief discussion how the job is done.
 
 (1) The data source Page:
-    CBOE, The Chicago Board Option Exchange, provides its Market Statistics Summary Data through the following page.
+CBOE, The Chicago Board Option Exchange, provides its Market Statistics Summary Data through the following page.
         http://www.cboe.com/data/mktstat.aspx
-    By default, this page provide the last trading day's market Statistics Summary Data; It also provide a input field that
-    let you Select any date in the past to get that date's historical data, you must enter the date in the the format of
-    mm/dd/yyyy.
+By default, this page provide the last trading day's market Statistics Summary Data; It also provide a input field that
+let you Select any date in the past to get that date's historical data, you must enter the date in the the format of
+mm/dd/yyyy.
     
-    Apparently, if I want to get Q3 2015 trading data, from 07/01/2015 to 09/30/2015, entering the date one by one 
-    manually is a tedious job.  That's why I wanted to write this Python program to do the job automatically.
+Apparently, if I want to get Q3 2015 trading data, from 07/01/2015 to 09/30/2015, entering the date one by one 
+manually is a tedious job.  That's why I wanted to write this Python program to do the job automatically.
 
 (2) Pre-requirements to run the program:
     Python 2.7.3
@@ -38,13 +38,12 @@ Here is a brief discussion how the job is done.
       driver = webdriver.Firefox()
       driver.get("http://www.cboe.com/data/mktstat.aspx")
     
-    Once the page is opened, use view page source in Firefox to find out that the date input box has Id 
-    "AllContent_ContentMain_ucMktStatCtl_txtDate"
+Once the page is opened, use view page source in Firefox to find out that the date input box has Id 
+"AllContent_ContentMain_ucMktStatCtl_txtDate"
     
-    The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, 
-    the page will refresh with data for that date.  This is how Selenium control the browser to automate the boring 
-    hand input.
-
+The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, 
+the page will refresh with data for that date.  This is how Selenium control the browser to automate the boring 
+hand input.
 
     input_element = driver.find_element_by_id("AllContent_ContentMain_ucMktStatCtl_txtDate")
     input_element.clear()
@@ -56,4 +55,3 @@ Here is a brief discussion how the job is done.
     soup = BeautifulSoup(html)
     
     detailed parsing is in the parse_one_day() method.
-
