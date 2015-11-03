@@ -26,7 +26,8 @@ Here is a brief discussion how the job is done.
     mm/dd/yyyy.
 
     Apparently, if I want to get Q3 2015 trading data, from 07/01/2015 to 09/30/2015, entering the date one 
-    by one manually is a tedious job.  That's why I wanted to write this Python program to do the job automatically.
+    by one manually is a tedious job.  That's why I wanted to write this Python program to do the job
+    automatically.
 
 (2) Pre-requirements to run the program:
 
@@ -34,8 +35,8 @@ Here is a brief discussion how the job is done.
     Selenium: Use command "pip install selenium" to install.
     BeautifulSoup: Use command "pip install beautifulsoup4" to install.
 
-    I am also assuming that you have Firefox installed on the computer, Selenium can also control other popular browsers,
-    like Google Chrome.  But in this program, only Firefox control code is implemented.
+    I am also assuming that you have Firefox installed on the computer, Selenium can also control other popular
+    browsers, like Google Chrome.  But in this program, only Firefox control code is implemented.
 
 (3) Selenium is so easy to use that you only need the following 2 lines to start a Firefox browser and go to the CBOE page.
 
