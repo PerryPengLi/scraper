@@ -11,7 +11,7 @@ In order to extract web data with Python, 2 steps need to be performed:
 
 In this program, A Python library named Selenium is used to do step 1, and BeautifulSoup Library is used to do step 2.
 
-More documentation can be found at these 2 sites:
+More documentation can be found at these 2 sites respectively:
 
     http://docs.seleniumhq.org/
     http://www.crummy.com/software/BeautifulSoup/bs4/doc/
@@ -19,13 +19,13 @@ More documentation can be found at these 2 sites:
 Here is a brief discussion how the job is done.
 
 (1) The data source Page:
+
     CBOE, The Chicago Board Option Exchange, provides its Market Statistics Summary Data through the following page.
         http://www.cboe.com/data/mktstat.aspx
-    By default, this page provide the last trading day's market Statistics Summary Data; It also provide a input field that
-    let you Select any date in the past to get that date's historical data, you must enter the date in the the format of
-    mm/dd/yyyy.
+    By default, this page provides the last trading day's market Statistics Summary Data; It also contains an input
+    field that let you select any date in the past to get that day's historical data, you must enter the date in the the         format of mm/dd/yyyy.
 
-    Apparently, if I want to get Q3 2015 trading data, from 07/01/2015 to 09/30/2015, entering the date one 
+    Apparently, if I want to get Q3 2015 trading volume data, from 07/01/2015 to 09/30/2015, entering the date one 
     by one manually is a tedious job.  That's why I wanted to write this Python program to do the job
     automatically.
 
@@ -38,12 +38,12 @@ Here is a brief discussion how the job is done.
     I am also assuming that you have Firefox installed on the computer, Selenium can also control other popular
     browsers, like Google Chrome.  But in this program, only Firefox control code is implemented.
 
-(3) Selenium is so easy to use that you only need the following 2 lines to start a Firefox browser and go to the CBOE page.
+(3) Selenium is very easy to use. You only need the following 2 lines to start a Firefox browser and go to the CBOE page.
 
       driver = webdriver.Firefox()
       driver.get("http://www.cboe.com/data/mktstat.aspx")
 
-Once the page is opened, use view page source in Firefox to find out that the date input box has Id
+Once the page is loaded, use view page source in Firefox to find out that the date input box has Id
 "AllContent_ContentMain_ucMktStatCtl_txtDate"
 
 The following 4 line of code let you find the input field, clear it, and set a date.  After submit() is called, the page will refresh with data for that date.  This is how Selenium control the browser to automate the boring hand input.
