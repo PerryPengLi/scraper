@@ -23,7 +23,7 @@ Here is a brief discussion how the job is done.
     CBOE, The Chicago Board Option Exchange, provides its Market Statistics Summary Data through the following page.
         http://www.cboe.com/data/mktstat.aspx
     By default, this page provides the last trading day's market Statistics Summary Data; It also contains an input
-    field that let you select any date in the past to get that day's historical data, you must enter the date in the the         format of mm/dd/yyyy.
+    field that let you select any date in the past to get that day's historical data, you must enter the date in the             format of mm/dd/yyyy.
 
     Apparently, if I want to get Q3 2015 trading volume data, from 07/01/2015 to 09/30/2015, entering the date one 
     by one manually is a tedious job.  That's why I wanted to write this Python program to do the job
